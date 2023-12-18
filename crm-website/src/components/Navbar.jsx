@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from './../assets/Icons/logo.png';
 
 const Navbar = () => {
@@ -28,13 +29,12 @@ const Navbar = () => {
 
         {/* Navigation links for medium and larger screens */}
         <div className="hidden md:flex space-x-4 gap-4">
-          <a href="#" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Dashboard</a>
-          <a href="#" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Smart View</a>
-          <a href="#" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Link</a>
-          <a href="#" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Link</a>
-          <a href="#" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Link</a>
+          <NavLink to="/" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Dashboard</NavLink>
+          <NavLink to="/smartview" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Smart View</NavLink>
+          <NavLink to="/leadDetail" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Lead Detail</NavLink>
+          <NavLink to="#" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Link</NavLink>
+          <NavLink to="#" className='font-medium text-gray-500 transition duration-300 ease-in-out hover:text-blue-500  text-sm'>Link</NavLink>
         </div>
-      </div>
 
       {/* Responsive menu for small screens */}
       {isMenuOpen && (
@@ -55,6 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
       )}
+      </div>
     </nav>
   );
 };

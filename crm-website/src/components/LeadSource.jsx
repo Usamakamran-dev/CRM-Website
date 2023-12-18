@@ -61,7 +61,7 @@ function LeadSource(){
 
     return(
         <div className="rounded-lg shadow-[0px_0px_10px_0px_rgb(0,0,0,0.08)] h-full col-span-2">
-        <div className="flex flex-row items-center gap-4 md:px-6 sm:px-4 md:py-4 sm:py-6">
+        <div className="flex flex-row items-center gap-4 md:px-6 px-4 md:py-4 py-6">
                 <img src={SourceLeadIcon} alt="Source-Lead-Icon" className='h-10 w-auto'/>
                 <div>
                     <h1 className="text-md font-semibold text-gray-950">
@@ -72,7 +72,7 @@ function LeadSource(){
                     </p>
                 </div>
              </div>
-         <div className='p-5'>
+         <div className='sm:p-5 p-3'>
               <Bar data={chartData}  plugins={[ChartDataLabels]} options={chartOptions} className='h-72' />
         </div>
     </div>

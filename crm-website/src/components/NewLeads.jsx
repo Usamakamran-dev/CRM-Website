@@ -1,20 +1,45 @@
 import TeamTaskIcon from './../assets/Icons/TeamTask.png';
+import { Typography } from "@material-tailwind/react";
+
+const TABLE_HEAD = ["Name", "Incomplete", "Lead Score"];
+const TABLE_ROWS = [
+  {
+    name: "John Michael",
+    incompleteTask: "20",
+    leadScore: "20"
+  },
+  {
+    name: "John Michael",
+    incompleteTask: "20",
+    leadScore: "20"
+  },
+  {
+    name: "John Michael",
+    incompleteTask: "20",
+    leadScore: "20"
+  },
+  {
+    name: "John Michael",
+    incompleteTask: "20",
+    leadScore: "20"
+  },
+  {
+    name: "John Michael",
+    incompleteTask: "20",
+    leadScore: "20"
+  }
+  ,
+  {
+    name: "John Michael",
+    incompleteTask: "20",
+    leadScore: "20"
+  }
+  ]
 
 function NewLeads(){
-    const userData = [
-        { id: 1, name: 'John Doe', incompleteTask: 25, pendingTask: 25,pendingToday: 25, overdueTask: 25, recentlyCompleted: 25 },
-        { id: 2, name: 'John Doe', incompleteTask: 25, pendingTask: 25,pendingToday: 25, overdueTask: 25, recentlyCompleted: 25 },
-        { id: 3, name: 'John Doe', incompleteTask: 25, pendingTask: 25,pendingToday: 25, overdueTask: 25, recentlyCompleted: 25 },
-        { id: 4, name: 'John Doe', incompleteTask: 25, pendingTask: 25,pendingToday: 25, overdueTask: 25, recentlyCompleted: 25 },
-        { id: 5, name: 'John Doe', incompleteTask: 25, pendingTask: 25,pendingToday: 25, overdueTask: 25, recentlyCompleted: 25 },
-        { id: 6, name: 'John Doe', incompleteTask: 25, pendingTask: 25,pendingToday: 25, overdueTask: 25, recentlyCompleted: 25 },
-        { id: 7, name: 'John Doe', incompleteTask: 25, pendingTask: 25,pendingToday: 25, overdueTask: 25, recentlyCompleted: 25 },
-        { id: 8, name: 'John Doe', incompleteTask: 25, pendingTask: 25,pendingToday: 25, overdueTask: 25, recentlyCompleted: 25 }
-      ];
-
     return(
         <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg shadow-[0px_0px_10px_0px_rgb(0,0,0,0.08)] h-full col-span-2">
-            <div className="flex flex-row items-center gap-4 md:px-6 sm:px-4 md:py-4 sm:py-6">
+            <div className="flex flex-row items-center gap-4 md:px-6 px-4 md:py-4 py-6">
                 <img src={TeamTaskIcon} alt="Team-Task-Icon" className='h-10 w-auto'/>
                 <div>
                     <h1 className="text-md font-semibold text-white">
@@ -25,27 +50,68 @@ function NewLeads(){
                     </p>
                 </div>
              </div>
-            <div className="flex items-center justify-center">
-            <table className="w-full">
-                <thead>
+             <div className='px-4'>
+                <table className="w-full min-w-max table-auto text-left">
+                    <thead>
                     <tr>
-                    <th className="py-2 px-4 text-sm font-semibold text-white text-start">User Name</th>
-                    <th className="py-2 px-4 text-sm font-semibold text-white text-start">Incomplete Task</th>
-                    <th className="py-2 px-4 text-sm font-semibold text-white text-start">Pending</th>
-                   
+                     <th className="border-b-2 border-white-100 p-4">
+                        <Typography color="white" className="font-semibold leading-none sm:text-xs text-[10px]">
+                        User Name
+                        </Typography>
+                     </th>
+                     <th className="border-b-2 border-white-100 p-4" >
+                        <Typography
+                        color="white"
+                        className="font-semibold leading-none sm:text-xs text-[10px]">
+                         Incomplete Task
+                        </Typography>
+                     </th>
+                     <th className="border-b-2 border-white-100 p-4">
+                        <Typography color="white" className="font-semibold leading-none sm:text-xs text-[10px]">
+                         Leading Score
+                        </Typography>
+                     </th>
                     </tr>
-                </thead>
-                <tbody>
-                    {userData.map(user => (
-                    <tr key={user.id}>
-                    <td className="py-1 px-4 text-sm font-regular text-white">{user.name}</td>
-                    <td className="py-1 px-4 text-sm font-regular text-white">{user.incompleteTask}</td>
-                    <td className="py-1 px-4 text-sm font-regular text-white">{user.pendingTask}</td>
-                    </tr>
-                    ))}
-                </tbody>
-            </table>
-            </div>
+                    </thead>
+        <tbody>
+          {TABLE_ROWS.map((dataObj, index) => {
+            const isLast = index === TABLE_ROWS.length - 1;
+            const classes = isLast ? "p-3" : "p-3 border-b border-white-100";
+            return (
+              <tr key={dataObj.name}>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="white"
+                    className="font-normal sm:text-xs text-[10px]"
+                  >
+                    {dataObj.name}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="white"
+                    className="font-normal sm:text-xs text-[10px]"
+                  >
+                    {dataObj.incompleteTask}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography
+                    variant="small"
+                    color="white"
+                    className="font-normal sm:text-xs text-[10px]"
+                  >
+                    {dataObj.leadScore}
+                  </Typography>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      </div>
          </div>
     )
 }

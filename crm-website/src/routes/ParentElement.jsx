@@ -6,10 +6,9 @@ function ParentElement(){
     return(
            <>
            <Navbar></Navbar>
-           <div className="py-20 overflow-hidden"> 
+           <div className="pt-20 overflow-hidden"> 
             <Outlet />
            </div>
            </>
-    )
-    }
-export default ParentElement;
+    )}
+    export default ParentElement;

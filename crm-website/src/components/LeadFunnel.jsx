@@ -11,21 +11,13 @@ function LeadFunnel(){
           {
             label: 'Leads',
             data: [1000, 3000, 5000, 500, 100, 120, 1400, 100,200,400,2000],
+            backgroundColor: [
+              'rgba(255, 26, 104, 0.5)',
+              'rgba(54, 162, 235, 0.5)'
+            ],
             borderColor: [
               'rgba(255, 26, 104, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'            
-            ],
-              backgroundColor: [
-              'rgba(255, 26, 104, 0.5)',
-              'rgba(54, 162, 235, 0.5)',
-              'rgba(255, 206, 86, 0.5)',
-              'rgba(75, 192, 192, 0.5)',
-              'rgba(153, 102, 255, 0.5)',
-              'rgba(255, 159, 64, 0.5)',
+              'rgba(54, 162, 235, 1)'
             ],
             borderWidth: 1,
             borderRadius: 3,
@@ -72,7 +64,7 @@ function LeadFunnel(){
 
     return(
         <div className="rounded-lg shadow-[0px_0px_10px_0px_rgb(0,0,0,0.08)] h-full col-span-3 overflow-hidden">
-             <div className="flex flex-row items-center gap-4 md:px-6 sm:px-4 md:py-4 sm:py-6">
+             <div className="flex flex-row items-center gap-4 md:px-6 px-4 md:py-4 py-6">
                 <img src={LeadFunnelIcon} alt="Lead-Funnel-Icon" className='h-10 w-auto'/>
                 <div>
                     <h1 className="text-md font-semibold text-gray-950">

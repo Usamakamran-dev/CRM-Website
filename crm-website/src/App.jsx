@@ -1,11 +1,12 @@
 import './App.css';
 import router from './routes/AppRoutes';
 import { RouterProvider } from 'react-router-dom';
+import LeadProvider from './context/LeadProvider';
 
 function App() {
   return (
-     <RouterProvider router={router}></RouterProvider>
-  )
-}
-
-export default App
+    <LeadProvider>
+        <RouterProvider router={router}></RouterProvider>
+     </LeadProvider>
+  )}
+  export default App
